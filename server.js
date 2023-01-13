@@ -9,12 +9,12 @@ app.use(helmet());
 
 // add a route that lives separately from the SvelteKit app
 app.get('/test', (req, res) => {
-	res.end('ok');
+	res.end('teste aja');
 });
 
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
 app.use(handler);
 
-app.listen(3000, () => {
-	console.log('listening on port 3000');
+app.listen(process.env.PORT || 3000, () => {
+	console.log(`listening on port ${process.env.PORT || 3000}`);
 });

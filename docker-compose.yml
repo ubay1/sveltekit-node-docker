@@ -1,12 +1,28 @@
-version: '3.9'
-
+version: '3'
 services:
-  sveltekit:
-    container_name: sveltekit
-    build: .
-    restart: always
+  svelte-node:
+    container_name: 'svelte-node'
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
-      - 5050:5050
+      - 3000:3000
     environment:
-      PORT: 5050
-      ORIGIN: 'http://localhost:5050'
+      - PORT=3000
+    volumes:
+      - .:/app
+      - svelte-node:/app/node_modules
+    # command: npm run dev:server
+  svelte-app:
+    container_name: 'svelte-app'
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+    ports:
+      - 5173:5173
+    # command: npm run dev
+volumes:
+  svelte-node:
+  svelte-app:

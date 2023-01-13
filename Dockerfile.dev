@@ -1,0 +1,10 @@
+FROM node:16.19-alpine3.16
+WORKDIR /app
+COPY package*.json .
+RUN npm install
+COPY . .
+
+RUN npm run build
+
+CMD npm rebuild esbuild && npm run dev -- --host
+# CMD ["npm", "run", "dev"]

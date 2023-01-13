@@ -10,7 +10,8 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
-		"dev:server": "nodemon server.js"
+		"preinstall": "npm i nodemon -g",
+		"dev:server": "nodemon -L server.js"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0",
@@ -18,14 +19,9 @@
 		"@sveltejs/kit": "^1.0.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
-		"cors": "^2.8.5",
-		"dotenv": "^16.0.3",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"express": "^4.18.2",
-		"helmet": "^6.0.1",
-		"morgan": "^1.10.0",
 		"nodemon": "^2.0.20",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
@@ -35,5 +31,12 @@
 		"typescript": "^4.9.3",
 		"vite": "^4.0.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.3",
+		"express": "^4.18.2",
+		"helmet": "^6.0.1",
+		"morgan": "^1.10.0"
+	}
 }
