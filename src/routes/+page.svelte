@@ -1,6 +1,6 @@
 <script>
 </script>
 
-<div>hi svelte ahoy</div>
+<div>hi svelte testerrr wkwk</div>
 
 <style></style>

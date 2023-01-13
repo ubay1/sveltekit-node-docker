@@ -9,7 +9,7 @@ app.use(helmet());
 
 // add a route that lives separately from the SvelteKit app
 app.get('/test', (req, res) => {
-	res.end('teste aja');
+	res.end('teste aja ya');
 });
 
 // let SvelteKit handle everything else, including serving prerendered pages and static assets

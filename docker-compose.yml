@@ -12,17 +12,17 @@ services:
     volumes:
       - .:/app
       - svelte-node:/app/node_modules
-    # command: npm run dev:server
+    command: npm run dev:server
   svelte-app:
     container_name: 'svelte-app'
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     volumes:
       - .:/app
     ports:
       - 5173:5173
-    # command: npm run dev
+    command: npm run dev -- --host
 volumes:
   svelte-node:
   svelte-app:
