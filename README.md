@@ -1,9 +1,9 @@
-## Build and Watch
+## Build
 ```
-docker-compose -f docker-compose.yml up --build
+docker build -t ubay/test-sveltekit .
 ```
 
-## Build and start
+## running
 ```
-docker-compose -f docker-compose.yml up -d --build
+docker run -d -p 3000:3000 ubay/test-sveltekit
 ```
